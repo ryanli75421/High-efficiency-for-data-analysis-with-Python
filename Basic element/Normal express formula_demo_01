@@ -1,0 +1,13 @@
+import re
+
+string = "The quick brown fox jumps over the lazy dog."
+string_list = string.split()
+string_to_find = r"The"
+pattern = re.compile(string_to_find, re.I)
+count = 0
+for word in string_list:
+    if pattern.search(word):
+        count += 1
+        print("{0:s}".format(word))
+print("Output #1: The count of THE equals to {0:d}".format(count))
+print("Output #2: {:s}".format(pattern.sub("a",string)))
