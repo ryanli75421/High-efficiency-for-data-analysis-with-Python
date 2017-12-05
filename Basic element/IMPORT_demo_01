@@ -1,0 +1,9 @@
+from math import exp, log, sqrt
+
+print("Output #3:  {0:.4f}".format(exp(3)))
+print("Output #4:  {0:.2f}".format(log(4)))
+print("Output #5:  {0:.1f}".format(sqrt(81)))
+
+print("Output #6:  {0:s}".format('''You can use triple single quotes
+             for multi-line comment strings.'''))
+# ''' can be replaced by """
