@@ -1,0 +1,5 @@
+string5 = "let's replace the spaces in this sentence with other characters."
+string5_list = string5.split()
+for word in string5_list:
+    print("{0:s}".format(word.capitalize()))
+print("Output #11: {0:s}".format(string5.capitalize()))
