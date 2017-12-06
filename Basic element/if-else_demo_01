@@ -1,0 +1,7 @@
+x = 5
+if x > 6:
+    print("Output #1: x is greater than 6.")
+elif x > 4 and x == 5:
+    print("Output #2: {}".format(x*x))
+else:
+    print("Output #3: x is not greater than 4.")
