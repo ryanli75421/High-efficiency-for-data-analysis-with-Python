@@ -1,0 +1,9 @@
+my_tuple = ('x', 'y', 'z')
+print("Output #1: {}".format(my_tuple))
+print("Output #2: my_tuple has {} elements.".format(len(my_tuple)))
+print("Output #3: {}".format(my_tuple[1]))
+
+one, two, three = my_tuple #拆解tuple
+print("Output #4: {0}, {1}, {2}".format(one, two, three))
+
+print("Output #5: {}".format(type(list(my_tuple)))) # tuple to list
