@@ -1,0 +1,13 @@
+y = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', \
+     'Nov', 'Dec']
+z = ['Annie', 'Betty', 'Claire', 'Daphne', 'Ellie', 'Franchesca', 'Greta', \
+     'Holly', 'Isabel', 'Jenny']
+
+print("Output #1:")
+for month in y:
+    print("{!s}".format(month))
+
+print("Output #2: (index value: name in list)")
+for i in range(len(z)):
+    if y[i].startswith('J'):
+        print("{0!s}: {1:s}".format(i+1, y[i]))
