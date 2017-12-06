@@ -1,0 +1,18 @@
+#讀取文字檔
+import sys
+
+print (sys.argv)
+#print(f.read())
+#input_file = sys.argv[1]
+
+print("Output #1:")
+filereader = open('1.txt', 'r')
+for row in filereader:
+    print(row.strip())
+filereader.close()
+
+#用with可自動關閉檔案物件
+print("Output #2:")
+with open('1.txt', 'r', newline='') as filereader:
+    for row in filereader:
+        print("{}".format(row.strip()))
