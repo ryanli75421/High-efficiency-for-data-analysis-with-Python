@@ -1,0 +1,11 @@
+def getMean(numericValues): 
+    if len(numericValues) > 0:
+        return sum(numericValues)/len(numericValues)
+    else: 
+        float('not a number')
+    
+my_function_test_list = [2, 2, 4, 4, 6, 6, 8, 8]
+print("Output #135 (Mean): {!s}".format(getMean(my_function_test_list)))
+
+import numpy as np
+print ("Output #135-1 (Mean):{!s}".format(np.mean(my_function_test_list)))
