@@ -1,0 +1,6 @@
+#while (有特定條件的迴圈)
+print("Output #1:")
+xx = 0
+while xx < 11:
+    print("{!s}".format(xx))
+    xx += 1
