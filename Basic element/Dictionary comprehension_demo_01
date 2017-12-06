@@ -1,0 +1,4 @@
+#字典生成式
+my_dictionary = {'customer': 7, 'customer2': 9, 'customer3': 11}
+my_results = {key : value for key, value in my_dictionary.items() if value > 10}
+print("Output #1 (dictionary comprehension): {}".format(my_results))
