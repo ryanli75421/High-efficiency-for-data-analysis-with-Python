@@ -1,0 +1,30 @@
+a_dict = {'x':'printer', 'y':5, 'z':['star', 'circle', 9]}
+print("Output #1: a_dict has {!s} elements.".format(len(a_dict)))
+print("Output #2: {}".format(a_dict['z']))
+
+print("Output #3: {}".format(a_dict.keys()))
+print("Output #4: {}".format(a_dict.values()))
+print("Output #5: {}".format(a_dict.items()))
+
+print("Output #6:")
+for key, value in a_dict.items():
+    print("{0:s}, {1}".format(key, value)) #一種迭代及存取字典的鍵與值的方法
+
+if 'y' in a_dict: # if true then do following program
+    print("Output #7: y is a key in a_dict: {}.".format(a_dict.keys()))
+if 'c' not in a_dict: # if true then do following program
+    print("Output #8: c is not a key in a_dict: {}.".format(a_dict.keys()))
+   
+print("Output #9: {!s}".format(a_dict.get('x'))) 
+# if true then print the coresponded value
+print("Output #10: {!s}".format(a_dict.get('w', 'Not in dict!!')))
+# if true then print the latter expression
+
+#dict_copy = a_dict.copy() #建立字典複本
+dict_copy = {'one': 1, 'two': 2, 'three': 3}
+ordered_dict1 = sorted(dict_copy.items(), key=lambda item: item[1])
+#根據字典裡面的值來升冪排序字典的鍵值配對
+print("Output #11 (order by keys): {}".format(ordered_dict1))
+ordered_dict3 = sorted(dict_copy.items(), key=lambda x: x[1], reverse=True)
+#根據字典裡面的值來降冪排序字典的鍵值配對
+print("Output #12 (order by values, decending): {}".format(ordered_dict3))
