@@ -1,0 +1,14 @@
+def getMean(numericValues):
+    return sum(numericValues)/len(numericValues)
+
+my_function_test_list2 = [ ]
+
+try:
+    result = getMean(my_function_test_list2)
+except ZeroDivisionError as detail:
+    print ("Output #1 (Error): {}".format('not a number'))
+    print ("Output #2 (Error): {}".format(detail))
+else:
+    print ("Output #3 (The mean is):", result)
+finally:
+    print ("Output #4 (Finally): The finally block is executed every time")
