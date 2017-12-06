@@ -1,0 +1,10 @@
+#使用glob讀取多個文字檔
+import glob
+import os
+
+print("Output #1:")
+#inputPath = sys.argv[1]
+for input_file in glob.glob(os.path.join('/Users/Username/Desktop/python/','*.txt')):
+    with open(input_file, 'r', newline='') as filereader:
+        for row in filereader:
+            print("{}".format(row.strip()))
