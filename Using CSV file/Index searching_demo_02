@@ -1,0 +1,23 @@
+import csv
+
+#input_file = sys.argv[1]
+#output_file = sys.argv[2]
+my_columns = ['Invoice Number', 'Purchase Date'] #以串列變數建立欲搜尋之欄位標題
+my_columns_header_index = []
+
+with open('supplier_data.csv', 'r', newline='') as csv_in_file: 
+    with open('supplier_data_header.csv', 'w', newline='') as csv_out_file: 
+        filereader_header = csv.reader(csv_in_file)
+        filewriter_header = csv.writer(csv_out_file)
+        header = next(filereader_header, None)
+        
+        for index_value_header in range(len(header)):
+            if header[index_value_header] in my_columns:
+                my_columns_header_index.append(index_value_header)
+        filewriter_header.writerow(my_columns) #添加欄位標題
+            
+        for row_list_header in filereader_header:
+            row_list_output = [] 
+            for index_value_header in my_columns_header_index:
+                row_list_output.append(row_list_header[index_value_header])
+            filewriter_header.writerow(row_list_output)
