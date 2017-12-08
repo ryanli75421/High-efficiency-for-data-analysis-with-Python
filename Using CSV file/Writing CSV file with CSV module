@@ -1,0 +1,17 @@
+#with CSV module
+
+import sys
+import csv
+
+#input_file = sys.argv[1]
+#output_file = sys.argv[2]
+
+with open('supplier_data_modification.csv', 'r', newline='') as csv_in_file: #開啟並讀取
+    with open('supplier_data_modification_1.csv', 'w', newline='') as csv_out_file: #開啟並寫入
+        filereader_modification = csv.reader(csv_in_file, delimiter=',')
+        #定義一個csv模組內檔案讀取物件  delimiter內的","是分隔符號  分號(;) tab(\t)
+        filewriter_modification = csv.writer(csv_out_file, delimiter=',')       
+        #定義一個csv模組內檔案寫入物件
+        for row_list_modification in filereader_modification:
+            print(row_list_modification)
+            filewriter_modification.writerow(row_list_modification)
