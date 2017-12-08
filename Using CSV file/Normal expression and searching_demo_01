@@ -1,0 +1,21 @@
+import sys
+import csv
+import re
+
+#input_file = sys.argv[1]
+#output_file = sys.argv[2]
+pattern = re.compile(r'(?P<my_pattern_group>^50-.*)', re.I) 
+#建立一正規表達式變數並搜尋"50-"的所有字串
+#re.I 執行正規表達式不區分大小寫的匹配
+
+with open('supplier_data.csv', 'r', newline='') as csv_in_file: 
+    with open('supplier_data_match_pattern.csv', 'w', newline='') as csv_out_file: 
+        filereader_match_pattern = csv.reader(csv_in_file)
+        filewriter_match_pattern = csv.writer(csv_out_file)
+        header_match_pattern = next(filereader_match_pattern) #讀入輸入檔第一行
+        filewriter_match_pattern.writerow(header_match_pattern) 
+        
+        for row_list_match_pattern in filereader_match_pattern:
+            invoice_number = row_list_match_pattern[1] 
+            if pattern.search(invoice_number): #用search在invoice_number搜尋文字組合
+                filewriter_match_pattern.writerow(row_list_match_pattern)
