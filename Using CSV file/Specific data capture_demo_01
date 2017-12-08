@@ -1,0 +1,20 @@
+import sys
+import csv
+
+#input_file = sys.argv[1]
+#output_file = sys.argv[2]
+
+with open('supplier_data.csv', 'r', newline='') as csv_in_file: 
+    with open('supplier_data_value.csv', 'w', newline='') as csv_out_file: 
+        filereader_value = csv.reader(csv_in_file)
+        filewriter_value = csv.writer(csv_out_file)
+        header_value = next(filereader_value) #讀入輸入檔第一行
+        filewriter_value.writerow(header_value) 
+        
+        for row_list_value in filereader_value:
+            supplier = str(row_list_value[0]).strip() 
+            #抓取輸入檔第一個供應商資料並轉成字串再去除字串結尾空格,tab和換行字元
+            cost = str(row_list_value[3]).strip('$').replace(',','')
+            #抓取輸入檔第四個成本值並轉成字串再去除$與字串內的逗點
+            if supplier == 'Supplier Z' or float(cost) > 600.0:
+                filewriter_value.writerow(row_list_value)
