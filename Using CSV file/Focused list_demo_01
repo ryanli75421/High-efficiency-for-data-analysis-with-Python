@@ -1,0 +1,20 @@
+#在資料列的值屬於一組關注對象
+
+import sys
+import csv
+
+#input_file = sys.argv[1]
+#output_file = sys.argv[2]
+important_dates = ['1/20/2014', '1/30/2014'] #建立一組變數來容納關注的值
+
+with open('supplier_data.csv', 'r', newline='') as csv_in_file: 
+    with open('supplier_data_in_set.csv', 'w', newline='') as csv_out_file: 
+        filereader_in_set = csv.reader(csv_in_file)
+        filewriter_in_set = csv.writer(csv_out_file)
+        header_in_set = next(filereader_in_set) #讀入輸入檔第一行
+        filewriter_in_set.writerow(header_in_set) 
+        
+        for row_list_in_set in filereader_in_set:
+            a_date = row_list_in_set[4] 
+            if a_date in important_dates:
+                filewriter_in_set.writerow(row_list_in_set)
